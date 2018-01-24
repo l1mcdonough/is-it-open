@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: 
+  christmas: false
+  thanksgiving: false
+  gas: false
+  tobacco: false
+
+two:
+  user: 
+  christmas: false
+  thanksgiving: false
+  gas: false
+  tobacco: false
