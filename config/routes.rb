@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'static_pages#home'
-
+  get 'new_post' => 'posts#new_post'
   get 'static_pages/about'
 
   get 'static_pages/contact'

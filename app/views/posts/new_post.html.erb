@@ -1,0 +1,7 @@
+
+<%= form_tag '/create_post', method: :post do %>
+  Store Name <%= text_field_tag :store_name %> <br>
+  Store Address  <%= text_field_tag :store_address %> <br>
+  Store City <%= text_field_tag :store_city %> <br>
+  Store State <%= select_tag(:store_state, options_for_select(@states)) %> <br>
+<% end %>
