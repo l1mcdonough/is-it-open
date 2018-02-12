@@ -1,7 +1,11 @@
 
 <%= form_tag '/create_post', method: :post do %>
-  Store Name <%= text_field_tag :store_name %> <br>
-  Store Address  <%= text_field_tag :store_address %> <br>
-  Store City <%= text_field_tag :store_city %> <br>
-  Store State <%= select_tag(:store_state, options_for_select(@states)) %> <br>
+  Store Name <%= text_field_tag :store %> <br>
+  Store Address  <%= text_field_tag :address %> <br>
+  Store City <%= text_field_tag :city %> <br>
+  Store State <%= select_tag(:state, options_for_select(@states)) %> <br>
+    Tobacco <%= check_box :tobacco, :post %><br>
+    Gas <%= check_box :gas, :post %><br>
+    Alcohol <%= check_box :alcohol, :post %><br>
+    <%= submit_tag 'Submit' %>
 <% end %>
