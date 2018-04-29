@@ -8,18 +8,17 @@ class PostsController < ApplicationController
   end
 
   def create_post
-    location_row = fill_database Location, :address, :city, :state
+    location_row = create_row Location, :address, :city, :state
     location_row.save!
-    post_row = fill_database Post, :store, :tobacco, :gas, :alcohol
+    post_row = create_row Post, :store, :tobacco, :gas, :alcohol
     post_row.update location: location_row
     post_row.save!
   end
 
-  def fill_database(table_class, *symbols)
-    row = table_class.create
-    symbols.each do |sym|
-      row.update(sym => params[sym])
-    end
-    row
+  def create_row(table_class, *permitted_params)
+    table_sym = table_class.to_s.downcase.to_sym
+    row = params.permit(*permitted_params)
+    table_class.new(row)
   end
-end
+ 
+  end

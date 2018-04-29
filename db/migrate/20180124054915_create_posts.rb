@@ -3,7 +3,6 @@ class CreatePosts < ActiveRecord::Migration[5.0]
     create_table :posts do |t|
       t.string :user
       t.string :store
-      t.string :country
       t.float :latitude
       t.float :longitude
       t.boolean :christmas

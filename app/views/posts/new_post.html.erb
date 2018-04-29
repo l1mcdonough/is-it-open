@@ -4,8 +4,8 @@
   Store Address  <%= text_field_tag :address %> <br>
   Store City <%= text_field_tag :city %> <br>
   Store State <%= select_tag(:state, options_for_select(@states)) %> <br>
-    Tobacco <%= check_box :tobacco, :post %><br>
-    Gas <%= check_box :gas, :post %><br>
-    Alcohol <%= check_box :alcohol, :post %><br>
+    Tobacco <%= check_box_tag :tobacco %><br>
+    Gas <%= check_box_tag :gas %><br>
+    Alcohol <%= check_box_tag :alcohol %><br>
     <%= submit_tag 'Submit' %>
 <% end %>
