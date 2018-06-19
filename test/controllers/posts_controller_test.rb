@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test "redirects to sign in page if not signed in" do
+    get new_post_path
+    assert_redirected_to new_user_session_path
+  end
 
 end

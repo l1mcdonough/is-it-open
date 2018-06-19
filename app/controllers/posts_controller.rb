@@ -4,6 +4,10 @@ class PostsController < ApplicationController
   end
 
   def new_post
+    if not user_signed_in?
+      redirect_to(new_user_session_path)
+      flash[:error] = 'Must be signed in to post'
+    end 
     @states = ISO3166::Country.new('US').states.keys
   end
 
